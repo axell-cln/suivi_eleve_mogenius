@@ -25,7 +25,7 @@ $base="mysqldb";
                        ) ;");
 
                        // Insertions des 10 personnes
-                       $resultat=mysqli_query($id, "INSERT INTO PERSONNE VALUES ('Coulon.A',20);");
+                       $resultat=mysqli_query($id, "INSERT INTO PERSONNE VALUES ('Coulon.A',20)  ON DUPLICATE KEY UPDATE nom = 'Coulon.A';");
                       $resultat=mysqli_query($id, "INSERT INTO PERSONNE VALUES ('Lee.H',27);");
                        $resultat=mysqli_query($id, "INSERT INTO PERSONNE VALUES ('rodain.D',30);");
                        $resultat=mysqli_query($id, "INSERT INTO PERSONNE VALUES ('Bertrand.B',25);");
