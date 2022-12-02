@@ -19,22 +19,17 @@ $base="mysqldb";
 
 
   $resultat=mysqli_query($id, "CREATE TABLE IF NOT EXISTS PERSONNE 
-                        (nom char(20) NOT NULL default '',
+                        (id int (3) PRIMARY KEY AUTO_INCREMENT NOT NULL
+                          nom char(20) NOT NULL default '',
                          age int(3) NOT NULL default '0',
-                         PRIMARY KEY(nom)
                        ) ;");
 
                        // Insertions des 10 personnes
-                       $resultat=mysqli_query($id, "INSERT INTO PERSONNE VALUES ('Coulon.A',20)  ON DUPLICATE KEY UPDATE nom = 'Coulon.A';");
-                      $resultat=mysqli_query($id, "INSERT INTO PERSONNE VALUES ('Lee.H',27);");
-                       $resultat=mysqli_query($id, "INSERT INTO PERSONNE VALUES ('rodain.D',30);");
-                       $resultat=mysqli_query($id, "INSERT INTO PERSONNE VALUES ('Bertrand.B',25);");
-                        $resultat=mysqli_query($id, "INSERT INTO PERSONNE VALUES ('Zen.H',22);");
-                        $resultat=mysqli_query($id, "INSERT INTO PERSONNE VALUES ('Martin.G',33);");
-                        $resultat=mysqli_query($id, "INSERT INTO PERSONNE VALUES ('Etienne.L',38);");
-                        $resultat=mysqli_query($id, "INSERT INTO PERSONNE VALUES ('Leroy.Y',18);");
-                        $resultat=mysqli_query($id, "INSERT INTO PERSONNE VALUES ('Petit.P',50);");
-                         $resultat=mysqli_query($id, "INSERT INTO PERSONNE VALUES ('Duval.X',34);");
+                       $resultat=mysqli_query($id, "INSERT INTO PERSONNE VALUES ('Coulon.A',20)  ON DUPLICATE KEY UPDATE id = 1;");
+                      $resultat=mysqli_query($id, "INSERT INTO PERSONNE VALUES ('Lee.H',27) ON DUPLICATE KEY UPDATE id = 2;");
+                       $resultat=mysqli_query($id, "INSERT INTO PERSONNE VALUES ('rodain.D',30) ON DUPLICATE KEY UPDATE id = 3;");
+                       $resultat=mysqli_query($id, "INSERT INTO PERSONNE VALUES ('Bertrand.B',25) ON DUPLICATE KEY UPDATE id = 4;");
+
 
  ?>
 
