@@ -21,7 +21,7 @@ $base="mysqldb";
   $resultat=mysqli_query($id, "CREATE TABLE IF NOT EXISTS PERSONNE 
                         (id int(3) PRIMARY KEY AUTO_INCREMENT NOT NULL,
                           nom char(20) NOT NULL default '',
-                         age int(3) NOT NULL default '0',
+                         age int(3) NOT NULL default '0'
                        ) ;");
 
                        // Insertions des 10 personnes
