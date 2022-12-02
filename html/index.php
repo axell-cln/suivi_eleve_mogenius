@@ -11,14 +11,14 @@ $base="mysqldb";
 
   // Suppression / Creation / Selection de ma bdd "vaccin"
 
-  $resultat=mysqli_query($id, "CREATE DATABASE $base IF NOT EXISTS");
+  $resultat=mysqli_query($id, "CREATE DATABASE IF NOT EXISTS $base ");
   mysqli_select_db($id, $base) or die("Impossible de selectionner la base : $base");
 
 
   // Creation de la table PERSONNE
 
 
-  $resultat=mysqli_query($id, "CREATE TABLE PERSONNE IF NOT EXISTS
+  $resultat=mysqli_query($id, "CREATE TABLE IF NOT EXISTS PERSONNE 
                         (nom char(20) NOT NULL default '',
                          age int(3) NOT NULL default '0',
                          PRIMARY KEY(nom)
