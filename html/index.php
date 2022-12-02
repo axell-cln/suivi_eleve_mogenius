@@ -11,15 +11,14 @@ $base="mysqldb";
 
   // Suppression / Creation / Selection de ma bdd "vaccin"
 
-  $resultat=mysqli_query($id, "DROP DATABASE IF EXISTS $base");
-  $resultat=mysqli_query($id, "CREATE DATABASE $base");
+  $resultat=mysqli_query($id, "CREATE DATABASE $base IF NOT EXISTS");
   mysqli_select_db($id, $base) or die("Impossible de selectionner la base : $base");
 
 
   // Creation de la table PERSONNE
 
 
-  $resultat=mysqli_query($id, "CREATE TABLE PERSONNE
+  $resultat=mysqli_query($id, "CREATE TABLE PERSONNE IF NOT EXISTS
                         (nom char(20) NOT NULL default '',
                          age int(3) NOT NULL default '0',
                          PRIMARY KEY(nom)
@@ -55,7 +54,10 @@ foreach($resultat as $resultat){
 }
 ?>
 <form METHOD="GET" ACTION="ajouter_eleve.php">
-  
+<input type="text" placeholder="Nom de l'élève" name="nom">
+<input type="submit">
+</form>
+
 </form>
 </body>
 </html>
