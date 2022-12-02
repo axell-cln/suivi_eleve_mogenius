@@ -24,13 +24,6 @@ $base="mysqldb";
                          age int(3) NOT NULL default '0'
                        ) ;");
 
-                       // Insertions des 10 personnes
-                       $resultat=mysqli_query($id, "INSERT INTO PERSONNE VALUES ('Coulon.A',20)  ON DUPLICATE KEY UPDATE id = 1;");
-                      $resultat=mysqli_query($id, "INSERT INTO PERSONNE VALUES ('Lee.H',27) ON DUPLICATE KEY UPDATE id = 2;");
-                       $resultat=mysqli_query($id, "INSERT INTO PERSONNE VALUES ('rodain.D',30) ON DUPLICATE KEY UPDATE id = 3;");
-                       $resultat=mysqli_query($id, "INSERT INTO PERSONNE VALUES ('Bertrand.B',25) ON DUPLICATE KEY UPDATE id = 4;");
-
-
  ?>
 
 <!DOCTYPE html>
